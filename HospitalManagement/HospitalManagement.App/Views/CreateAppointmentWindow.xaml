@@ -1,0 +1,81 @@
+﻿<Window x:Class="HospitalManagement.App.Views.CreateAppointmentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:System="clr-namespace:System;assembly=System.Runtime"
+        xmlns:DataModels="clr-namespace:HospitalManagement.Data.DataModels;assembly=HospitalManagement.Data"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Create Appointment" Height="800" Width="550"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <ObjectDataProvider x:Key="dataFromEnum" MethodName="GetValues"
+                            ObjectType="{x:Type System:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="DataModels:AppointmentStatus"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock Text="Appointment Details"
+                   Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+                   HorizontalAlignment="Center" 
+                   Margin="0,10" />
+
+        <StackPanel Grid.Row="1" Margin="20">
+            <ComboBox Margin="0,20,0,0" ItemsSource="{Binding Patients}"
+                      materialDesign:HintAssist.Hint="Patient Name"
+                      DisplayMemberPath="FirstName"
+                      Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                      SelectedValue="{Binding SelectedPatient, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+            <ComboBox Margin="0,20,0,0" ItemsSource="{Binding Doctors}"
+                      materialDesign:HintAssist.Hint="Doctor's Name"
+                      DisplayMemberPath="DoctorName"
+                      Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                      SelectedValue="{Binding SelectedDoctor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+            <StackPanel Orientation="Horizontal" Width="auto">
+                <DatePicker Margin="0,20,0,0" Width="240"
+                            Text="{Binding AppointmentDate}"
+                            Style="{StaticResource MaterialDesignOutlinedDatePicker}"
+                            materialDesign:HintAssist.Hint="Appointment Date" />
+                <materialDesign:TimePicker
+                    Margin="15,20,0,0" Width="240"
+                    Text="{Binding AppointmentTime}"
+                    materialDesign:HintAssist.Hint="Appointment Time"
+                    Is24Hours="False"
+                    Style="{StaticResource MaterialDesignOutlinedTimePicker}" />
+
+            </StackPanel>
+
+            
+
+            <ComboBox Margin="0,20,0,0" ItemsSource="{Binding Source={StaticResource dataFromEnum}}"
+                      materialDesign:HintAssist.Hint="Appointment Status"
+                      Style="{StaticResource MaterialDesignOutlinedComboBox}"
+                      SelectedItem="{Binding Status}"/>
+
+            <!-- Reason To Visit -->
+            <TextBox Margin="0,20,0,0" materialDesign:HintAssist.Hint="Reason to Visit (Optional)"
+                     Text="{Binding ReasonToVisit, UpdateSourceTrigger=PropertyChanged}"
+                     Style="{StaticResource MaterialDesignOutlinedTextBox}" 
+                     AcceptsReturn="True"
+                     Height="80" />
+
+            <Button Margin="10,20,0,0" Content="Save Appointment" 
+                    Style="{StaticResource MaterialDesignRaisedButton}"
+                    Command="{Binding SaveAppointmentCommand}"  />
+        </StackPanel>
+    </Grid>
+</Window>
