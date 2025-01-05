@@ -1,0 +1,108 @@
+Folder PATH listing for volume Windows
+Volume serial number is E834-BCCC
+C:.
+|   HospitalManagement.sln
+|   tree.txt
+|   
++---HospitalManagement.App
+|   |   App.config
+|   |   App.xaml
+|   |   App.xaml.cs
+|   |   AppIcon.png
+|   |   AssemblyInfo.cs
+|   |   HospitalManagement.App.csproj
+|   |   HospitalManagement.App.csproj.user
+|   |   MainWindow.xaml
+|   |   MainWindow.xaml.cs
+|   |   
+|   +---bin
+|   |   \---Debug
+|   |       \---net6.0-windows
+|   +---Commands
+|   |       RelayCommand.cs
+|   |       
+|   +---obj
+|   |   \---Debug
+|   |       \---net6.0-windows
+|   |           |   .NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+|   |           |   HospitalManagement.App.AssemblyInfo.cs
+|   |           |   HospitalManagement.App.AssemblyInfoInputs.cache
+|   |           |   HospitalManagement.App.csproj.AssemblyReference.cache
+|   |           |   HospitalManagement.App.csproj.FileListAbsolute.txt
+|   |           |   HospitalManagement.App.GeneratedMSBuildEditorConfig.editorconfig
+|   |           |   HospitalManagement.App_Content.g.cs
+|   |           |   HospitalManagement.App_Content.g.i.cs
+|   |           |   
+|   |           +---ref
+|   |           +---refint
+|   |           \---Views
+|   +---Styles
+|   |       TabItemModel.cs
+|   |       
+|   +---ViewModels
+|   |       BaseViewModel.cs
+|   |       CreateAppointmentViewModel.cs
+|   |       CustomLegends.cs
+|   |       DashboardViewModel.cs
+|   |       DoctorsViewModel.cs
+|   |       MainWindowViewModel.cs
+|   |       PatientInfoViewModel.cs
+|   |       PatientsViewModel.cs
+|   |       
+|   \---Views
+|           CreateAppointmentWindow.xaml
+|           CreateAppointmentWindow.xaml.cs
+|           DashboardView.xaml
+|           DashboardView.xaml.cs
+|           DoctorsView.xaml
+|           DoctorsView.xaml.cs
+|           PatientInfoWindow.xaml
+|           PatientInfoWindow.xaml.cs
+|           PatientsView.xaml
+|           PatientsView.xaml.cs
+|           
+\---HospitalManagement.Data
+    |   DesignTimeDbContextFactory.cs
+    |   HospitalDbContext.cs
+    |   HospitalManagement.Data.csproj
+    |   
+    +---bin
+    |   \---Debug
+    |       \---net6.0
+    +---DataManagers
+    |       AppointmentDataManager.cs
+    |       DoctorDataManager.cs
+    |       IAppointmentDataManager.cs
+    |       IDoctorDataManager.cs
+    |       IPatientDataManager.cs
+    |       PatientDataManager.cs
+    |       
+    +---DataModels
+    |       AppointmentModel.cs
+    |       DoctorModel.cs
+    |       PatientModel.cs
+    |       
+    +---Migrations
+    |       20241220110634_UpdatePatientModel_DoctorId.cs
+    |       20241220110634_UpdatePatientModel_DoctorId.Designer.cs
+    |       20241228014710_AddAppointmentModel.cs
+    |       20241228014710_AddAppointmentModel.Designer.cs
+    |       20241228014955_RemoveAppointmentId.cs
+    |       20241228014955_RemoveAppointmentId.Designer.cs
+    |       20241228122652_UpdateAppointmentDateTime.cs
+    |       20241228122652_UpdateAppointmentDateTime.Designer.cs
+    |       HospitalDbContextModelSnapshot.cs
+    |       
+    \---obj
+        \---Debug
+            \---net6.0
+                |   .NETCoreApp,Version=v6.0.AssemblyAttributes.cs
+                |   HospitalManagement.Data.AssemblyInfo.cs
+                |   HospitalManagement.Data.AssemblyInfoInputs.cache
+                |   HospitalManagement.Data.csproj.AssemblyReference.cache
+                |   HospitalManagement.Data.csproj.FileListAbsolute.txt
+                |   HospitalManagement.Data.GeneratedMSBuildEditorConfig.editorconfig
+                |   HospitalManagement.Data.GlobalUsings.g.cs
+                |   
+                +---ref
+                \---refint
