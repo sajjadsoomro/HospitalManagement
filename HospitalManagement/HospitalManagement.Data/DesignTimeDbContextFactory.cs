@@ -9,8 +9,8 @@ namespace HospitalManagement.Data
         {
             var optionsBuilder = new DbContextOptionsBuilder<HospitalDbContext>();
 
-            // Assuming you're using the connection string in your app.config
-            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=HospitalDB;Integrated Security=True;");
+            // Keep design-time migrations aligned with the application's SQL Server Express instance.
+            optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=HospitalDB;Integrated Security=True;TrustServerCertificate=True;");
 
             return new HospitalDbContext(optionsBuilder.Options);
         }
